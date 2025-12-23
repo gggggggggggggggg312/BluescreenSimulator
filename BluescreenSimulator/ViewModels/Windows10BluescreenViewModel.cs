@@ -93,23 +93,6 @@ namespace BluescreenSimulator.ViewModels
             set => SetModelProperty(value);
         }
 
-        // ================================
-        // Windows 11 (2025) BSOD helpers
-        // ================================
-
-        public string ProgressText => $"{Progress}% complete";
-
-        public string StopCode2025
-        {
-            get
-            {
-                if (string.IsNullOrWhiteSpace(StopCode))
-                    return string.Empty;
-
-                return $"Stop code: {StopCode}";
-            }
-        }
-
         public override bool SupportsRainbow => true;
     }
 }
