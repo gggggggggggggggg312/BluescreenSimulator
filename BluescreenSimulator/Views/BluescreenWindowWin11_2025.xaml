@@ -1,0 +1,44 @@
+<Window x:Class="BluescreenSimulator.Views.BluescreenWindowWin11_2025"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowState="Maximized"
+        Background="Black"
+        Topmost="True"
+        ShowInTaskbar="False"
+        FontFamily="Segoe UI"
+        FontWeight="Normal">
+
+    <Grid>
+
+        <!-- Center content -->
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+            <TextBlock
+                Text="Your device ran into a problem and needs to restart."
+                Foreground="White"
+                FontSize="22"
+                TextAlignment="Center"/>
+
+            <TextBlock
+                Text="{Binding ProgressText}"
+                Foreground="White"
+                FontSize="18"
+                Margin="0,12,0,0"
+                TextAlignment="Center"/>
+
+        </StackPanel>
+
+        <!-- Bottom stop code -->
+        <TextBlock
+            Text="{Binding StopCode2025}"
+            Foreground="#AAFFFFFF"
+            FontSize="12"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center"
+            Margin="0,0,0,24"/>
+
+    </Grid>
+</Window>
