@@ -23,9 +23,10 @@ namespace BluescreenSimulator.ViewModels
         public string Title => AppInfo.AppTitle;
         public ObservableCollection<IBluescreenViewModel> Bluescreens { get; set; } = new ObservableCollection<IBluescreenViewModel>
         {
+            new Windows11_2025BluescreenViewModel(),
             new Windows10BluescreenViewModel(),
             new Windows7BluescreenViewModel(),
-            new Windows9xBluescreenViewModel()
+            new Windows9xBluescreenViewModel(),
         };
 
         public DelegateCommand ResetAllCommand { get; }
