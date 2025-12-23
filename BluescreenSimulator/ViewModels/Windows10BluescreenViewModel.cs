@@ -1,4 +1,4 @@
-﻿using System.Threading;
+using System.Threading;
 using BluescreenSimulator.Views;
 
 namespace BluescreenSimulator.ViewModels
@@ -13,10 +13,12 @@ namespace BluescreenSimulator.ViewModels
         {
 
         }
+
         public Windows10BluescreenViewModel(Windows10Bluescreen model = null) : base(model)
         {
-            
+
         }
+
         private CancellationTokenSource _source = new CancellationTokenSource();
 
         [CmdParameter("-e", Description = "{Text} for Emoticon", FullAlias = "emoticon")]
@@ -25,42 +27,49 @@ namespace BluescreenSimulator.ViewModels
             get => Model.Emoticon;
             set => SetModelProperty(value);
         }
+
         [CmdParameter("-m1", Description = "{Text} for Main Text (Line 1)", FullAlias = "main1")]
         public string MainText1
         {
             get => Model.MainText1;
             set => SetModelProperty(value);
         }
+
         [CmdParameter("-m2", Description = "{Text} for Main Text (Line 2)", FullAlias = "main2")]
         public string MainText2
         {
             get => Model.MainText2;
             set => SetModelProperty(value);
         }
+
         [CmdParameter("-p", Description = "{Text} for More Info", FullAlias = "progress")]
         public string Complete
         {
             get => Model.Complete;
             set => SetModelProperty(value);
         }
+
         [CmdParameter("-mi", Description = "{Text} for More Info", FullAlias = "moreinfo")]
         public string MoreInfo
         {
             get => Model.MoreInfo;
             set => SetModelProperty(value);
         }
+
         [CmdParameter("-s", Description = "{Text} for Support Person", FullAlias = "supportperson")]
         public string SupportPerson
         {
             get => Model.SupportPerson;
             set => SetModelProperty(value);
         }
+
         [CmdParameter("-sc", Description = "{Text} for Stop code", FullAlias = "stopcode")]
         public string StopCode
         {
             get => Model.StopCode;
             set => SetModelProperty(value);
         }
+
         [CmdParameter("-hq", Description = "Hides the QR code", FullAlias = "hideqr")]
         public bool HideQR
         {
@@ -69,6 +78,7 @@ namespace BluescreenSimulator.ViewModels
         }
 
         public bool ShowQR => !HideQR;
+
         [CmdParameter("-oq", Description = "Use original QR code", FullAlias = "origqr")]
         public bool UseOriginalQR
         {
@@ -82,7 +92,24 @@ namespace BluescreenSimulator.ViewModels
             get => Model.TextDelay;
             set => SetModelProperty(value);
         }
-        
+
+        // ================================
+        // Windows 11 (2025) BSOD helpers
+        // ================================
+
+        public string ProgressText => $"{Progress}% complete";
+
+        public string StopCode2025
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(StopCode))
+                    return string.Empty;
+
+                return $"Stop code: {StopCode}";
+            }
+        }
+
         public override bool SupportsRainbow => true;
     }
 }
