@@ -1,4 +1,3 @@
-using BluescreenSimulator.ViewModels;
 
 namespace BluescreenSimulator.ViewModels
 {
