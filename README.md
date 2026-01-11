@@ -1,3 +1,6 @@
+# NOTE
+This is the fork of a try to add the 2025 BSOD to BluescreenSimulator. I have since been abandoned the project and you won't see any more commits being commited here. The rest of the text will be the same.
+
 # BluescreenSimulator
 This is a simple Bluescreen Simulator for Windows with lots of customizable features. It will not crash your PC; it just displays a full screen window.
 
